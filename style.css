@@ -1,51 +1,107 @@
- body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            margin: 20px;
+body {
+            font-family: 'Arial', sans-serif;
+            background-color: #e3f2fd;
+            margin: 0;
+            padding: 0;
+        }
+
+        h2 {
+            margin-top: 30px;
+            font-size: 32px;
+            color: #1e88e5;
             text-align: center;
         }
-        .notification-container {
-            width: 300px;
-            background: white;
-            padding: 15px;
+
+        /* Container styling */
+        .container {
+            width: 90%;
+            max-width: 700px;
+            margin: 30px auto;
+            background: #ffffff;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Section styling */
+        .section {
+            margin-top: 20px;
+            padding: 20px;
+            background: #f9f9f9;
+            border: 1px solid #e0e0e0;
             border-radius: 10px;
-            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-            margin: auto;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
         }
-        .notification {
-            padding: 10px;
-            margin: 5px 0;
-            border-radius: 5px;
-            color: #333;
-            font-weight: bold;
+
+        .section:hover {
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
-        .notification.success {
-            background: #c8e6c9;
-            border-left: 5px solid #388e3c;
+
+        h3 {
+            color: #1565c0;
+            margin-bottom: 15px;
         }
-        .notification.error {
-            background: #ffcdd2;
-            border-left: 5px solid #d32f2f;
-        }
-        .email-input {
-            margin-top: 10px;
-        }
-        input, button {
-            padding: 10px;
-            margin: 5px;
-            border: none;
-            border-radius: 5px;
+
+        /* Input and textarea styling */
+        input, textarea, button {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
             font-size: 16px;
-        }
-        input {
-            width: 250px;
+            border-radius: 8px;
             border: 1px solid #ccc;
+            outline: none;
+            box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease-in-out;
         }
+
+        input:focus, textarea:focus {
+            border-color: #1e88e5;
+            box-shadow: 0 0 8px rgba(30, 136, 229, 0.5);
+        }
+
+        textarea {
+            resize: none;
+            height: 100px;
+        }
+
+        /* Button styles */
         button {
-            background: #1976d2;
+            background: linear-gradient(to right, #42a5f5, #1e88e5);
             color: white;
+            border: none;
+            font-weight: bold;
             cursor: pointer;
+            transition: all 0.3s ease-in-out;
         }
+
         button:hover {
-            background: #1565c0;
+            background: linear-gradient(to right, #1e88e5, #1565c0);
+            transform: translateY(-2px);
+        }
+
+        button:active {
+            transform: scale(0.98);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 600px) {
+            .container {
+                width: 95%;
+                padding: 15px;
+            }
+
+            h2 {
+                font-size: 24px;
+            }
+
+            input, textarea, button {
+                font-size: 14px;
+                padding: 10px;
+            }
+
+            h3 {
+                font-size: 18px;
+            }
         }
