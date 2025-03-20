@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cloud Notification System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 20px;
+            text-align: center;
+        }
+        .notification-container {
+            width: 300px;
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            margin: auto;
+        }
+        .notification {
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 5px;
+            color: #333;
+            font-weight: bold;
+        }
+        .notification.success {
+            background: #c8e6c9;
+            border-left: 5px solid #388e3c;
+        }
+        .notification.error {
+            background: #ffcdd2;
+            border-left: 5px solid #d32f2f;
+        }
+        .email-input {
+            margin-top: 10px;
+        }
+        input, button {
+            padding: 10px;
+            margin: 5px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        input {
+            width: 250px;
+            border: 1px solid #ccc;
+        }
+        button {
+            background: #1976d2;
+            color: white;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #1565c0;
+        }
+    </style>
+</head>
+<body>
+    <h2>Cloud Notification System</h2>
+    <div class="notification-container" id="notificationPanel">
+        <p>No new notifications</p>
+    </div>
+    <button onclick="sendNotification('New Cloud Update Available', 'success')">New Update</button>
+    <button onclick="sendNotification('Server Connection Failed', 'error')">Server Error</button>
+    
+    <div class="email-input">
+        <input type="email" id="email" placeholder="Enter email to receive notifications">
+        <button onclick="sendEmailNotification()">Send Email Notification</button>
+    </div>
+    
+    <script>
+        function sendNotification(message, type) {
+            let panel = document.getElementById("notificationPanel");
+            let notification = document.createElement("div");
+            notification.classList.add("notification", type);
+            notification.innerText = message;
+            panel.appendChild(notification);
+        }
+
+        function sendEmailNotification() {
+            let email = document.getElementById("email").value;
+            if (email) {
+                alert(`Email notification sent to: ${email}`);
+            } else {
+                alert("Please enter a valid email address.");
+            }
+        }
+    </script>
+</body>
+</html>
